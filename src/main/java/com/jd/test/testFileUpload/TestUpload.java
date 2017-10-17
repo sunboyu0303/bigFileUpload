@@ -14,13 +14,13 @@ public class TestUpload {
         FileInputStream fis = null;
 
         try {
-            String basePath = TestUpload.class.getResource("").getPath();
+            String basePath = TestUpload.class.getClassLoader().getResource("").getPath();
             String path = basePath + "testFile.txt";
 
-            System.out.println(path);
             File file = new File(path);
-
             fis = new FileInputStream(file);
+
+
 
         } catch (Exception e) {
             e.printStackTrace();
