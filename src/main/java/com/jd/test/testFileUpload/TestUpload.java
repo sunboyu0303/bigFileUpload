@@ -1,8 +1,6 @@
 package com.jd.test.testFileUpload;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by sunboyu on 2017/10/16.
@@ -18,8 +16,10 @@ public class TestUpload {
             String path = basePath + "testFile.txt";
 
             File file = new File(path);
-            fis = new FileInputStream(file);
+            fis = new FileInputStream(new File(path));
 
+            System.out.println(fis);
+            InputStreamReader isr = new InputStreamReader(fis);
 
 
         } catch (Exception e) {
